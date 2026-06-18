@@ -82,13 +82,13 @@ jobs:
           deployment-name: "ahmad-cldy-test"
           project-name: "ahmad"
           provider-accounts: |
-             {
+            {
               "module.database:aws_usw2": {
-                "account_id": "${{ secrets.AWS_ACCOUNT_ID }}", 
+                "account_id": "${{ secrets.AWS_ACCOUNT_ID }}",
                 "vendor": "aws"
               },
               "*": {
-                "account_id": "${{ secrets.SECOND_AWS_ACCOUNT_ID }}", 
+                "account_id": "${{ secrets.SECOND_AWS_ACCOUNT_ID }}",
                 "vendor": "aws"
               }
             }
@@ -106,13 +106,13 @@ jobs:
           deployment-name: "ahmad-cldy-test"
           project-name: "ahmad"
           provider-accounts: |
-             {
+            {
               "module.database:aws_usw2": {
-                "account_id": "${{ secrets.AWS_ACCOUNT_ID }}", 
+                "account_id": "${{ secrets.AWS_ACCOUNT_ID }}",
                 "vendor": "aws"
               },
               "*": {
-                "account_id": "${{ secrets.SECOND_AWS_ACCOUNT_ID }}", 
+                "account_id": "${{ secrets.SECOND_AWS_ACCOUNT_ID }}",
                 "vendor": "aws"
               }
             }
