@@ -1,0 +1,42 @@
+name: Test Wrapper Action
+run-name: Test Wrapper Action - Replicating Error Structure
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  test-wrapper:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+      checks: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Cloudability Wrapper Action
+        uses: ./.github/actions/cloudability-wrapper
+        with:
+          fd-url: ${{ secrets.FD_URL }}
+          fd-public-key: ${{ secrets.FD_PUBLIC_KEY }}
+          fd-secret-key: ${{ secrets.FD_SECRET_KEY }}
+          github-token: ${{ secrets.GH_TOKEN }}
+          pr-number: ${{ github.event.pull_request.number || '1' }}
+          cloudability-host: ${{ secrets.CLDY_HOST }}
+          fd-env-id: ${{ secrets.FD_ENV_ID }}
+          deployment-name: "gh-test-deployment"
+          project-name: "gh-test-project"
+          provider-accounts: |
+            {
+              "aws": {
+                "account_id": "${{ secrets.AWS_ACCOUNT_ID }}",
+                "vendor": "aws"
+              }
+            }
+          tf-plan: "tfplan.json"
+
+# Made with Bob
