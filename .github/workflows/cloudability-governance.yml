@@ -62,7 +62,7 @@ jobs:
       - name: Get GitHub PR metadata
         uses: IBM/ibm-cloudability-governance/actions/github-info@v0.2.x
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
 
       - name: Run Cloudability Governance Metadata Retrieval
@@ -75,7 +75,7 @@ jobs:
         uses: IBM/ibm-cloudability-governance/actions/cost-estimation@v0.2.x
         continue-on-error: true
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ vars.CLDY_HOST }}
           fd-env-id: ${{ vars.FD_ENV_ID }}
@@ -99,7 +99,7 @@ jobs:
         uses: IBM/ibm-cloudability-governance/actions/policy-evaluation@v0.2.x
         continue-on-error: true
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ vars.CLDY_HOST }}
           fd-env-id: ${{ vars.FD_ENV_ID }}
@@ -123,7 +123,7 @@ jobs:
         uses: IBM/ibm-cloudability-governance/actions/recommendation@v0.2.x
         continue-on-error: true
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ vars.CLDY_HOST }}
           fd-env-id: ${{ vars.FD_ENV_ID }}

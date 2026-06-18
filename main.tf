@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "demo_bucket" {
 
   tags = {
     Name        = "Cloudability Demo Bucket"
-    Environment = "prod"
+    Environment = "dev"
     Project     = "governance-demo"
     ManagedBy   = "Terraform"
   }
