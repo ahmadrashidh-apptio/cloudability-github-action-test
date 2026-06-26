@@ -42,7 +42,6 @@ terraform.rc
 
 # Ignore Terraform plan files (binary and JSON)
 tfplan
-tfplan.json
 
 # Ignore test directory
 test/
