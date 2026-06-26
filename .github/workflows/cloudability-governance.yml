@@ -17,26 +17,26 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Get Frontdoor token
-        uses: IBM/ibm-cloudability-governance/actions/frontdoor/login@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/frontdoor/login@v0.2.5
         with:
           fd-url: ${{ secrets.FD_URL }}
           fd-public-key: ${{ secrets.FD_PUBLIC_KEY }}
           fd-secret-key: ${{ secrets.FD_SECRET_KEY }}
 
       - name: Get GitHub PR metadata
-        uses: IBM/ibm-cloudability-governance/actions/github-info@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/github-info@v0.2.5
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           pr-number: ${{ github.event.pull_request.number }}
 
       - name: Run Cloudability Governance Metadata Retrieval
-        uses: IBM/ibm-cloudability-governance/actions/metadata@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/metadata@v0.2.5
         with:
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
 
       - name: Run Cloudability Cost Estimation
-        uses: IBM/ibm-cloudability-governance/actions/cost-estimation@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/cost-estimation@v0.2.5
         continue-on-error: true
         with:
           github-token: ${{ secrets.GH_TOKEN }}
@@ -54,7 +54,7 @@ jobs:
           tf-plan: "tfplan.json"
 
       - name: Run Cloudability Governance Policy Evaluation
-        uses: IBM/ibm-cloudability-governance/actions/policy-evaluation@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/policy-evaluation@v0.2.5
         continue-on-error: true
         with:
           github-token: ${{ secrets.GH_TOKEN }}
@@ -72,7 +72,7 @@ jobs:
           tf-plan: "tfplan.json"
 
       - name: Run Cloudability Recommendation
-        uses: IBM/ibm-cloudability-governance/actions/recommendation@v0.2.x
+        uses: IBM/ibm-cloudability-governance/actions/recommendation@v0.2.5
         continue-on-error: true
         with:
           github-token: ${{ secrets.GH_TOKEN }}
