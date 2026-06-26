@@ -43,8 +43,7 @@ jobs:
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
-          deployment-name: "gh-test-deployment"
-          project-name: "gh-test-project"
+          deployment-name: "ahmad-ghaction-test-deployment"
           provider-accounts: |
             {
               "aws": {
@@ -62,8 +61,7 @@ jobs:
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
-          deployment-name: "gh-test-deployment"
-          project-name: "gh-test-project"
+          deployment-name: "ahmad-ghaction-test-deployment"
           provider-accounts: |
             {
               "aws": {
@@ -81,8 +79,7 @@ jobs:
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
-          deployment-name: "gh-test-deployment"
-          project-name: "gh-test-project"
+          deployment-name: "ahmad-ghaction-test-deployment"
           provider-accounts: |
             {
               "aws": {
