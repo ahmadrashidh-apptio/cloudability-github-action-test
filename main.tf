@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.11.0"
+  required_version = ">= 1.0.0"
 
   required_providers {
     aws = {
@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "demo_bucket" {
 
   tags = {
     Name        = "Cloudability Demo Bucket"
-    Environment = "prod"
+    Environment = "dev"
     Project     = "governance-demo"
     ManagedBy   = "Terraform"
   }
