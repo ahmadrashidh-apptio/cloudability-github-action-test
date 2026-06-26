@@ -43,6 +43,7 @@ jobs:
           pr-number: ${{ github.event.pull_request.number }}
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
+          comments-off: "true"
           deployment-name: "ahmad-ghaction-test-deployment"
           provider-accounts: |
             {
@@ -62,6 +63,7 @@ jobs:
           cloudability-host: ${{ secrets.CLDY_HOST }}
           fd-env-id: ${{ secrets.FD_ENV_ID }}
           deployment-name: "ahmad-ghaction-test-deployment"
+          checkruns-off: "true"
           provider-accounts: |
             {
               "aws": {
